@@ -8,7 +8,7 @@ class Services {
                     // "costItems":[{"test":"11"},{"test":"22"}],
                     "costItems":[]
                 })
-            },3000)
+            },1000)
         })
     }
 }
