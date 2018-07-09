@@ -29,56 +29,122 @@ class CostOrder extends Component {
                 <div>
                   {
                     CompareUtil.arrayIsEmpty(costItems) ?
-                      <div>新增界面</div>
+                      <div>新增界面，外带“从历史单生成”按钮</div>
                       :
-                      <div>修改界面</div>
+                      <div>修改界面，外带“从历史单生成”按钮</div>
                   }
-                  <div className="l-panel-bwarp">
-                  <div className="l-panel-body">
-                  <div className="l-grid l-grid-hashorizontal">
-                    <div className="l-grid2" style={{ width: 1042, left: 30 }}>
-                      <div className="l-grid-header l-grid-header2" style={{ height: 56 }}>
-                        <div className="l-grid-header-inner" style={{ width: 1082 }}>
-                          <table className="l-grid-header-table" cellPadding="0" cellSpacing="0">
+                  {/* <div className="l-panel-bwarp">
+                  <div className="l-panel-body"> */}
+                  <div style={{ margin: 0, padding: 0, width: '100%' }}>
+                    <div className="l-grid2" style={{ width: '100%', left: 0 }}>
+                      <div className="l-grid-header l-grid-header2" style={{ height: 56, width: '100%' }}>
+                        <div className="l-grid-header-inner" style={{ width: '100%' }}>
+                          <table className="l-grid-header-table" cellPadding="0" cellSpacing="0" style={{ width: '100%' }} >
                             <tbody>
-                              <tr className="l-grid-hd-row l-grid-hd-mul">
-                                <td className="l-grid-hd-cell l-grid-hd-cell-mul" id="maingrid4|hcell|c102" style={{ height: 28 }}>
+                              <tr className="l-grid-hd-row">
+                              <td className="l-grid-hd-cell" rowSpan='2' style={{ height: 56 }}>
                                   <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
-                                    <span className="l-grid-hd-cell-text">公司信息</span>
+                                    <span className="l-grid-hd-cell-text"></span>
+                                  </div>
+                                </td>
+                                <td className="l-grid-hd-cell" rowSpan='2' style={{ height: 56 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">添加行</span>
+                                  </div>
+                                </td>
+                                <td className="l-grid-hd-cell" rowSpan='2' style={{ height: 56 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">编码</span>
+                                  </div>
+                                </td>
+                                <td className="l-grid-hd-cell" rowSpan="2" style={{ height: 56 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">项目成本</span>
                                   </div></td>
-                                <td className="l-grid-hd-cell l-grid-hd-cell-mul" id="maingrid4|hcell|c104" colSpan="3" style={{ height: 28 }}>
+                                <td className="l-grid-hd-cell" rowSpan="2" style={{ height: 56 }}>
                                   <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
-                                    <span className="l-grid-hd-cell-text">个人信息</span>
+                                    <span className="l-grid-hd-cell-text">单位</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" colSpan='3' style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">材料</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" colSpan='2' style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">工资</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" colSpan='2' style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">制造费用</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" colSpan='2' style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">管理费用</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" colSpan='2' style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">增值税</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" rowSpan='2' style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">价税合计</span>
                                   </div></td>
                               </tr>
                               <tr className="l-grid-hd-row">
-                                <td className="l-grid-hd-cell" id="maingrid4|hcell|c103" columnindex="1" columnname="CompanyName" style={{ height: 28, width: 300 }}>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
                                   <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
-                                    <span className="l-grid-hd-cell-text">公司名</span>
+                                    <span className="l-grid-hd-cell-text">数量</span>
                                   </div></td>
-                                <td className="l-grid-hd-cell" id="maingrid4|hcell|c105" columnindex="2" columnname="CustomerID" style={{ height: 28, width: 120 }}>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
                                   <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
-                                    <span className="l-grid-hd-cell-text">主键</span>
+                                    <span className="l-grid-hd-cell-text">单价</span>
                                   </div></td>
-                                <td className="l-grid-hd-cell" id="maingrid4|hcell|c106" columnindex="3" columnname="ContactName" style={{ height: 28, width: 50 }}>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
                                   <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
-                                    <span className="l-grid-hd-cell-text">联系名</span>
+                                    <span className="l-grid-hd-cell-text">金额</span>
                                   </div></td>
-                                <td className="l-grid-hd-cell l-grid-hd-cell-last" id="maingrid4|hcell|c107" columnindex="4" columnname="City" style={{ height: 28, width: 568 }}>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
                                   <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
-                                    <span className="l-grid-hd-cell-text">城市</span>
+                                    <span className="l-grid-hd-cell-text">单价</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">金额</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">制造费率</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">金额</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">管理费率</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">金额</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">增值税</span>
+                                  </div></td>
+                                <td className="l-grid-hd-cell" style={{ height: 28 }}>
+                                  <div className="l-grid-hd-cell-inner" style={{ height: 28 }}>
+                                    <span className="l-grid-hd-cell-text">税额</span>
                                   </div></td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
                       </div>
-                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               }
+              <div>保存和取消按钮</div>
             </div>
         }
       </div>
